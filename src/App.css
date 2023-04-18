@@ -1,0 +1,15 @@
+.cursive {
+  font-family: 'Dancing Script', cursive !important;
+}
+
+.not-cursive {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #ffc400 !important;
+}

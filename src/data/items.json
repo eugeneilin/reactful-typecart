@@ -1,32 +1,50 @@
 [
   {
     "id": 1,
-    "name": "Book",
-    "price": 10.99,
-    "imgUrl": "/imgs/book.jpg"
+    "name": "Red Carpet Delight",
+    "price": 134.99,
+    "imgUrl": "/imgs/1.jpg"
   },
   {
     "id": 2,
-    "name": "Computer",
-    "price": 1199,
-    "imgUrl": "/imgs/computer.jpg"
+    "name": "Blueberry Bistro Decorator",
+    "price": 114.5,
+    "imgUrl": "/imgs/2.jpg"
   },
   {
     "id": 3,
-    "name": "Banana",
-    "price": 1.05,
-    "imgUrl": "/imgs/banana.jpg"
+    "name": "Brown Sugar Tastemaker",
+    "price": 444.99,
+    "imgUrl": "/imgs/3.jpg"
   },
   {
     "id": 4,
-    "name": "Car",
-    "price": 14000,
-    "imgUrl": "/imgs/car.jpg"
+    "name": "Black Tie Inkwell",
+    "price": 852.5,
+    "imgUrl": "/imgs/4.jpg"
   },
   {
     "id": 5,
-    "name": "Piano",
-    "price": 5000,
-    "imgUrl": "/imgs/piano.jpg"
+    "name": "Golden Gourmet Pen",
+    "price": 908.25,
+    "imgUrl": "/imgs/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Silver Gastronomy Quill",
+    "price": 186.99,
+    "imgUrl": "/imgs/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Gray Matter Precision",
+    "price": 499.5,
+    "imgUrl": "/imgs/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Magenta Artistic Scribbler",
+    "price": 799.5,
+    "imgUrl": "/imgs/8.jpg"
   }
 ]

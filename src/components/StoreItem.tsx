@@ -18,14 +18,14 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
   return (
     <Card className='h-100'>
       <Card.Img variant='top' src={imgUrl} height='200px' style={{ objectFit: 'cover' }} />
-      <Card.Body className='d-flex flex-column'>
+      <Card.Body className='d-flex flex-column cursive'>
         <Card.Title className='d-flex justify-content-between align-items-baseline mb-4'>
-          <span className='fs-2'>{name}</span>
+          <span className='fs-3 mb-3'>{name}</span>
           <span className='ms-2 text-muted'>{formatCurrency(price)}</span>
         </Card.Title>
         <div className='mt-auto'>
           {quantity === 0 ? (
-            <Button className='w-100' onClick={() => increaseCartQuantity(id)}>
+            <Button className='w-100 not-cursive' onClick={() => increaseCartQuantity(id)}>
               + Add To Cart
             </Button>
           ) : (
@@ -40,7 +40,12 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                 </div>
                 <Button onClick={() => increaseCartQuantity(id)}>+</Button>
               </div>
-              <Button onClick={() => removeFromCart(id)} variant='danger' size='sm'>
+              <Button
+                className='not-cursive'
+                onClick={() => removeFromCart(id)}
+                variant='danger'
+                size='sm'
+              >
                 Remove
               </Button>
             </div>
