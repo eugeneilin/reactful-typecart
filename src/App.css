@@ -1,3 +1,11 @@
+/* Theme Colors */
+:root {
+  --primary-color: #ffc400;
+  --light-color: #fff;
+  --dark-color: rgba(0, 0, 0, 0.55);
+}
+
+/* Font */
 .cursive {
   font-family: 'Dancing Script', cursive !important;
 }
@@ -6,10 +14,66 @@
   font-family: 'Roboto', sans-serif !important;
 }
 
+/* General */
 a {
   text-decoration: none !important;
+  color: var(--dark-color) !important;
+  transition: 0.2s ease-in-out;
 }
 
 a:hover {
-  color: #ffc400 !important;
+  color: var(--primary-color) !important;
+  transition: 0.2s ease-in-out;
 }
+
+/* Text Colors */
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+.light-color {
+  color: var(--light-color) !important;
+}
+
+.dark-color {
+  color: var(--dark-color) !important;
+}
+
+/* Outline Colors */
+.outline-primary {
+  border: 1px solid var(--dark-color) !important;
+  color: var(--dark-color) !important;
+}
+
+.outline-primary:hover {
+  border: 1px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background: transparent !important;
+}
+
+/* Active Class */
+.active {
+  color: var(--primary-color) !important;
+}
+
+/* Background Color */
+.background-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/* Button Colors */
+.btn-primary {
+  background-color: var(--dark-color) !important;
+  color: var(--light-color) !important;
+  border: transparent !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--light-color) !important;
+}
+
+/* Dark Overlay */
+/* .overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+} */

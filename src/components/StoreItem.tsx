@@ -10,10 +10,15 @@ type StoreItemProps = {
 };
 
 export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } =
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, openCart } =
     useShoppingCart();
 
   const quantity = getItemQuantity(id);
+
+  function handleClick() {
+    increaseCartQuantity(id);
+    openCart();
+  }
 
   return (
     <Card className='h-100'>
@@ -25,7 +30,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
         </Card.Title>
         <div className='mt-auto'>
           {quantity === 0 ? (
-            <Button className='w-100 not-cursive' onClick={() => increaseCartQuantity(id)}>
+            <Button className='w-100 not-cursive' onClick={() => handleClick()}>
               + Add To Cart
             </Button>
           ) : (
