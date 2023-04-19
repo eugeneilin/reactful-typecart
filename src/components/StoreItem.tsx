@@ -10,12 +10,11 @@ type StoreItemProps = {
 };
 
 export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, openCart } =
-    useShoppingCart();
+  const { getItemQuantity, increaseCartQuantity, openCart } = useShoppingCart();
 
   const quantity = getItemQuantity(id);
 
-  function handleClick() {
+  function handleAddToCart() {
     increaseCartQuantity(id);
     openCart();
   }
@@ -29,32 +28,10 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
           <span className='ms-2 text-muted'>{formatCurrency(price)}</span>
         </Card.Title>
         <div className='mt-auto'>
-          {quantity === 0 ? (
-            <Button className='w-100 not-cursive' onClick={() => handleClick()}>
-              + Add To Cart
-            </Button>
-          ) : (
-            <div className='d-flex flex-column align-items-center' style={{ gap: '.5rem' }}>
-              <div
-                className='d-flex align-items-center justify-content-center'
-                style={{ gap: '.5rem' }}
-              >
-                <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
-                <div>
-                  <span className='fs-3'>{quantity}</span> in cart
-                </div>
-                <Button onClick={() => increaseCartQuantity(id)}>+</Button>
-              </div>
-              <Button
-                className='not-cursive'
-                onClick={() => removeFromCart(id)}
-                variant='danger'
-                size='sm'
-              >
-                Remove
-              </Button>
-            </div>
-          )}
+          <Button className='w-100 not-cursive' onClick={() => handleAddToCart()}>
+            {quantity === 0 ? '+ Add To Cart' : 'In Cart'}
+            {/* disable button conditionally */}
+          </Button>
         </div>
       </Card.Body>
     </Card>

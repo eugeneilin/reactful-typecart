@@ -9,7 +9,7 @@ type CartItemProps = {
 };
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { removeFromCart } = useShoppingCart();
+  const { increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useShoppingCart();
   const item = storeItems.find((i) => i.id === id);
   if (item == null) {
     return null;
@@ -34,6 +34,29 @@ export function CartItem({ id, quantity }: CartItemProps) {
         </div>
         <div className='text-muted' style={{ fontSize: '.75rem' }}>
           {formatCurrency(item.price)}
+        </div>
+        <div>
+          <div className='d-flex flex-column align-items-center' style={{ gap: '.5rem' }}>
+            <div
+              className='d-flex align-items-center justify-content-center'
+              style={{ gap: '.5rem' }}
+            >
+              {' '}
+              <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
+              <div>
+                <span className='fs-3'>{quantity}</span> in cart
+              </div>
+              <Button onClick={() => increaseCartQuantity(id)}>+</Button>
+            </div>
+            {/* <Button
+                className='not-cursive'
+                onClick={() => removeFromCart(id)}
+                variant='danger'
+                size='sm'
+              >
+                Remove
+              </Button> */}
+          </div>
         </div>
       </div>
       <div> {formatCurrency(item.price * quantity)}</div>
