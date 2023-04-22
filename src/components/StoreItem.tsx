@@ -28,9 +28,12 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
           <span className='ms-2 text-muted'>{formatCurrency(price)}</span>
         </Card.Title>
         <div className='mt-auto'>
-          <Button className='w-100 not-cursive' onClick={() => handleAddToCart()}>
+          <Button
+            className='w-100 not-cursive'
+            onClick={() => handleAddToCart()}
+            disabled={quantity > 0}
+          >
             {quantity === 0 ? '+ Add To Cart' : 'In Cart'}
-            {/* disable button conditionally */}
           </Button>
         </div>
       </Card.Body>

@@ -1,5 +1,5 @@
 import { Button, Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 
 export function Navbar() {
@@ -8,6 +8,10 @@ export function Navbar() {
   return (
     <NavbarBs sticky='top' className='bg-white shadow-sm'>
       <Container>
+        <NavbarBs.Brand>
+          <Link to='/'>Chef's Magic Pens</Link>
+        </NavbarBs.Brand>
+
         <Nav className='me-auto'>
           <Nav.Link as={NavLink} to='/'>
             Home

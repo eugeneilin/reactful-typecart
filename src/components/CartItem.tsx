@@ -16,50 +16,28 @@ export function CartItem({ id, quantity }: CartItemProps) {
   }
 
   return (
-    <Stack direction='horizontal' gap={2} className='d-flex align-items-center'>
+    <Stack id='cart-item' direction='horizontal' gap={2} className='d-flex align-items-center'>
       <img
         src={item.imgUrl}
         alt={item.name}
-        style={{ width: '150px', height: '80px', objectFit: 'cover' }}
-        height={50}
+        style={{ height: '80px', width: '100px', objectFit: 'cover' }}
       />
       <div className='me-auto'>
-        <div>
-          {item.name}{' '}
-          {quantity > 1 && (
-            <span className='text-muted' style={{ fontSize: '.65rem' }}>
-              x{quantity}
-            </span>
-          )}
+        <div>{item.name}</div>
+        <div className='text-muted' style={{ fontSize: '.8rem' }}>
+          {formatCurrency(item.price)} each
         </div>
-        <div className='text-muted' style={{ fontSize: '.75rem' }}>
-          {formatCurrency(item.price)}
-        </div>
-        <div>
-          <div className='d-flex flex-column align-items-center' style={{ gap: '.5rem' }}>
-            <div
-              className='d-flex align-items-center justify-content-center'
-              style={{ gap: '.5rem' }}
-            >
-              {' '}
-              <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
-              <div>
-                <span className='fs-3'>{quantity}</span> in cart
-              </div>
-              <Button onClick={() => increaseCartQuantity(id)}>+</Button>
-            </div>
-            {/* <Button
-                className='not-cursive'
-                onClick={() => removeFromCart(id)}
-                variant='danger'
-                size='sm'
-              >
-                Remove
-              </Button> */}
-          </div>
+        <div className='d-flex align-items-center justify-content-start'>
+          <Button size='sm' onClick={() => decreaseCartQuantity(id)}>
+            -
+          </Button>
+          <span>{quantity}</span>
+          <Button size='sm' onClick={() => increaseCartQuantity(id)}>
+            +
+          </Button>
         </div>
       </div>
-      <div> {formatCurrency(item.price * quantity)}</div>
+
       <Button variant='outline-danger' size='sm' onClick={() => removeFromCart(item.id)}>
         &times;
       </Button>

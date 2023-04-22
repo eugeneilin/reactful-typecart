@@ -73,7 +73,14 @@ a:hover {
   color: var(--light-color) !important;
 }
 
-/* Dark Overlay */
-/* .overlay {
-  background-color: rgba(0, 0, 0, 0.55);
-} */
+/* Cart Item Quantity Buttons */
+#cart-item div:first-of-type .btn {
+  background: transparent !important;
+  color: var(--dark-color) !important;
+  font-size: 1.5rem;
+}
+
+#cart-item div:first-of-type .btn:hover {
+  background: transparent !important;
+  color: var(--primary-color) !important;
+}
